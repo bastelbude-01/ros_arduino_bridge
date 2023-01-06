@@ -87,6 +87,7 @@
 /* Sensor functions */
 #include "sensors.h"
 
+
 /* Include servo support if required */
 #ifdef USE_SERVOS
    #include <Servo.h>
@@ -119,6 +120,7 @@
 #endif
 
 /* Variable initialization */
+
 
 // A pair of varibles to help parse serial commands (thanks Fergs)
 int arg = 0;
@@ -248,7 +250,7 @@ int runCommand() {
 /* Setup function--runs once at startup. */
 void setup() {
   Serial.begin(BAUDRATE);
-
+  
 // Initialize the motor controller if used */
 #ifdef USE_BASE
   #ifdef ARDUINO_ENC_COUNTER
@@ -293,6 +295,7 @@ void setup() {
    interval and check for auto-stop conditions.
 */
 void loop() {
+  
   while (Serial.available() > 0) {
     
     // Read the next character
@@ -355,4 +358,3 @@ void loop() {
   }
 #endif
 }
-
